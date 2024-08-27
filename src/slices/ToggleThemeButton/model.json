@@ -1,0 +1,16 @@
+{
+  "id": "toggle_theme_button",
+  "type": "SharedSlice",
+  "name": "ToggleThemeButton",
+  "description": "ToggleThemeButton",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
