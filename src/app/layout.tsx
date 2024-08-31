@@ -22,7 +22,6 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
-          <div className="h-[500vh]"></div>
         </Providers>
       </body>
     </html>
