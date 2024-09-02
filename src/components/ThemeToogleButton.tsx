@@ -29,7 +29,9 @@ const ThemeToggleButton = () => {
       <Switch
         checked={isDark}
         onCheckedChange={toggleTheme}
-        className={clsx("w-20 h-8 ")}
+        className={clsx(
+          "w-20 h-8 border border-slate-100 dark:border-slate-800 "
+        )}
       />
     </div>
   );
