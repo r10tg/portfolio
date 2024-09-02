@@ -3,6 +3,8 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import clsx from "clsx";
 
 const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
@@ -18,10 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={playfairDisplay.className}>
+      <body
+        className={clsx(playfairDisplay.className, "relative min-h-screen")}
+      >
         <Providers>
           <Header />
           {children}
+          <Footer />
+          <div className="absolute opacity-0  inset-0 -z-50 max-h-screen dark:opacity-100 background-gradient"></div>
+          <div className="absolute pointer-events-none inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-0 mix-blend-soft-light dark:opacity-20 "></div>
         </Providers>
       </body>
     </html>
