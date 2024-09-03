@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: Params }) {
     <Bounded as="article">
       <div className="rounded-2xl border-2 bg-slate-100 dark:bg-slate-900 px-4 py-10 border-slate-600 md:px-8 md:py-20">
         <Heading as="h1"> {page.data.title} </Heading>
-        <div className="flex gap-4 text-yellow-400 text-xl font-bold">
+        <div className="flex gap-4 text-yellow-400 text-xl font-bold overflow-hidden">
           {page.tags.map((tag, index) => (
             <span key={index}>{tag}</span>
           ))}

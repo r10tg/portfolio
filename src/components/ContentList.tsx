@@ -115,8 +115,9 @@ const ContentList = ({
   }, []);
 
   return (
-    <div ref={component}>
+    <>
       <ul
+        ref={component}
         className={clsx(
           " grid border-b border-slate-800 dark:border-slate-100 "
         )}
@@ -126,7 +127,7 @@ const ContentList = ({
           <li
             key={index}
             ref={(el: any) => (itemsRef.current[index] = el)}
-            className={clsx("list-item opacity-0f")}
+            className={clsx("list-item opacity-0")}
             onMouseEnter={() => setCurrentItem(index)}
           >
             <Link
@@ -137,9 +138,15 @@ const ContentList = ({
             >
               <div className={clsx(" flex flex-col ")}>
                 <span className="text-3xl font-bold">{item.data.title}</span>
-                <div className="flex gap-3 text-yellow-400 text-lg font-bold">
+                <div className="flex gap-3 text-yellow-400 ">
                   {item.tags.map((tag, index) => (
-                    <span key={index}> {tag} </span>
+                    <span
+                      key={index}
+                      className="text-lg font-semibold overflow-hidden"
+                    >
+                      {" "}
+                      {tag}{" "}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -162,7 +169,7 @@ const ContentList = ({
             currentItem !== null ? `url(${contentImages[currentItem]})` : "",
         }}
       ></div>
-    </div>
+    </>
   );
 };
 
